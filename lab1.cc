@@ -30,7 +30,7 @@ void insert() {
     ofstream f("students.dat", ios::app | ios::binary);
     cout << "Enter SID, Name, Branch, Sem, Address: ";
     cin >> s.sid;
-    cin.ignore();
+    cin.ignore();   // Ignore the newline character after reading SID
     cin.getline(s.name, 30);
     cin >> s.branch >> s.sem;
     cin.ignore();
