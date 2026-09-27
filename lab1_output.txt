@@ -77,13 +77,23 @@ Modified
 5.List CSE 
 6.List CSE+Kuvempunagar 
 7.Exit
+Choice: 3
+Enter SID to delete: 1004
+Deleted
+
+1.Insert 
+2.Modify Addr 
+3.Delete 
+4.List All
+5.List CSE 
+6.List CSE+Kuvempunagar 
+7.Exit
 Choice: 4
 
 SID     Name    Branch  Sem     Address
-1001    Aarav Sharma    CSE     3       Kuvempunagar, Mysuru
-1002    Diya Rao        ECE     5       Vijayanagr, Mysuru
+1001    Arnav Sharma    CSE     3       Kuvempunagar, Mysuru
+1002    Diya Rao        ECE     5       Vijayanagar, Mysuru
 1003    Ishaan Kumar    CSE     3       SVP nagar, Mysuru
-1004    Meera Nair      ISE     7       Kuvempunagar, Mysuru
 
 1.Insert 
 2.Modify Addr 
@@ -96,7 +106,7 @@ Choice: 5
 
 CSE Students:
 SID     Name    Sem     Address
-1001    Aarav Sharma    3       Kuvempunagar, Mysuru
+1001    Arnav Sharma    3       Kuvempunagar, Mysuru
 1003    Ishaan Kumar    3       SVP nagar, Mysuru
 
 1.Insert 
@@ -110,7 +120,7 @@ Choice: 6
 
 CSE + Kuvempunagar:
 SID     Name    Sem     Address
-1001    Aarav Sharma    3       Kuvempunagar, Mysuru
+1001    Arnav Sharma    3       Kuvempunagar, Mysuru
 
 1.Insert 
 2.Modify Addr 
