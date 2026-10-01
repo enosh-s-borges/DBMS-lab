@@ -1,0 +1,126 @@
+Query OK, 0 rows affected (0.011 sec)
+
+Query OK, 0 rows affected (0.019 sec)
+
+Query OK, 0 rows affected (0.027 sec)
+
+Query OK, 0 rows affected (0.037 sec)
+
+Query OK, 0 rows affected (0.044 sec)
+
+Query OK, 0 rows affected (0.050 sec)
+
+Query OK, 5 rows affected (0.051 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.052 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.054 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.055 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.057 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.058 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.070 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.084 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.107 sec)              
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.122 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.145 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.160 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.162 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.164 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.166 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.167 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.169 sec)
+
++---------+--------------+---------------------+
+| cust_id | cname        | city                |
++---------+--------------+---------------------+
+|       1 | Aarav Sharma | Vijayanagar, Mysuru |
+|       2 | Diya Rao     | Bengaluru           |
+|       3 | Ishaan Kumar | Mangaluru           |
+|       4 | Meera Nair   | Hubballi            |
+|       5 | Kabir Das    | Mysuru              |
++---------+--------------+---------------------+
+5 rows in set (0.169 sec)
+
++----------+------------+---------+-----------+
+| order_id | odate      | cust_id | order_amt |
++----------+------------+---------+-----------+
+|     1001 | 2025-01-05 |       1 |      1600 |
+|     1002 | 2025-01-12 |       2 |      2300 |
+|     1003 | 2025-02-03 |       3 |       800 |
+|     1004 | 2025-02-18 |       4 |      4200 |
+|     1005 | 2025-03-01 |       5 |      1250 |
++----------+------------+---------+-----------+
+5 rows in set (0.169 sec)
+
++---------+-----------+
+| item_id | unitprice |
++---------+-----------+
+|     201 |       500 |
+|     202 |       750 |
+|     203 |       200 |
+|     204 |      1200 |
+|     205 |       350 |
++---------+-----------+
+5 rows in set (0.169 sec)
+
++----------+---------+-----+
+| order_id | item_id | qty |
++----------+---------+-----+
+|     1001 |     201 |   4 |
+|     1002 |     202 |   2 |
+|     1003 |     203 |   4 |
+|     1004 |     204 |   3 |
++----------+---------+-----+
+4 rows in set (0.169 sec)
+
++--------------+------------+
+| warehouse_id | city       |
++--------------+------------+
+|          301 | Mysuru     |
+|          302 | Bengaluru  |
+|          303 | Mangaluru  |
+|          304 | Hubballi   |
+|          305 | Shivamogga |
++--------------+------------+
+5 rows in set (0.169 sec)
+
++----------+--------------+------------+
+| order_id | warehouse_id | ship_date  |
++----------+--------------+------------+
+|     1001 |          301 | 2025-01-07 |
+|     1002 |          302 | 2025-01-13 |
+|     1003 |          303 | 2025-02-04 |
+|     1004 |          304 | 2025-02-19 |
+|     1005 |          305 | 2025-03-02 |
++----------+--------------+------------+
+5 rows in set (0.169 sec)

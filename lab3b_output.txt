@@ -1,0 +1,107 @@
+Query OK, 0 rows affected (0.012 sec)
+
+Query OK, 0 rows affected (0.020 sec)
+
+Query OK, 0 rows affected (0.028 sec)
+
+Query OK, 0 rows affected (0.036 sec)
+
+Query OK, 0 rows affected (0.046 sec)
+
+Query OK, 5 rows affected (0.048 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.050 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.053 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.056 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.059 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.077 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.091 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.118 sec)              
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.133 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.152 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.171 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.173 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.175 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.176 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.178 sec)
+
++-----------+--------------+---------------------+
+| driver_id | name         | address             |
++-----------+--------------+---------------------+
+| D001      | Aarav Sharma | Vijayanagar, Mysuru |
+| D002      | Diya Rao     | Bengaluru           |
+| D003      | Ishaan Kumar | Mangaluru           |
+| D004      | Meera Nair   | Hubballi            |
+| D005      | Kabir Das    | Mysuru              |
++-----------+--------------+---------------------+
+5 rows in set (0.178 sec)
+
++------------+---------------+------+
+| regno      | model         | year |
++------------+---------------+------+
+| KA03CD2002 | Maruti Swift  | 2018 |
+| KA09AB1001 | Honda City ZX | 2020 |
+| KA09IJ5005 | Toyota Innova | 2019 |
+| KA19EF3003 | Hyundai i20   | 2022 |
+| KA25GH4004 | Tata Nexon    | 2021 |
++------------+---------------+------+
+5 rows in set (0.178 sec)
+
++---------------+------------+-----------+
+| report_number | acc_date   | location  |
++---------------+------------+-----------+
+|          5001 | 2025-01-10 | Mysuru    |
+|          5002 | 2025-02-14 | Bengaluru |
+|          5003 | 2025-03-08 | Mangaluru |
+|          5004 | 2025-04-21 | Hubballi  |
+|          5005 | 2025-05-17 | Mysuru    |
++---------------+------------+-----------+
+5 rows in set (0.178 sec)
+
++-----------+------------+
+| driver_id | regno      |
++-----------+------------+
+| D002      | KA03CD2002 |
+| D001      | KA09AB1001 |
+| D005      | KA09IJ5005 |
+| D003      | KA19EF3003 |
+| D004      | KA25GH4004 |
++-----------+------------+
+5 rows in set (0.178 sec)
+
++-----------+------------+---------------+---------------+
+| driver_id | regno      | report_number | damage_amount |
++-----------+------------+---------------+---------------+
+| D001      | KA09AB1001 |          5001 |         13000 |
+| D002      | KA03CD2002 |          5002 |          8000 |
+| D003      | KA19EF3003 |          5003 |         15000 |
+| D004      | KA25GH4004 |          5004 |         22000 |
++-----------+------------+---------------+---------------+
+4 rows in set (0.179 sec)

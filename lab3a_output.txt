@@ -1,0 +1,75 @@
+Query OK, 0 rows affected (0.009 sec)
+
+Query OK, 0 rows affected (0.015 sec)
+
+Query OK, 0 rows affected (0.025 sec)
+
+Query OK, 5 rows affected (0.027 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.029 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.031 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.046 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.059 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.085 sec)                      
+Records: 5  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.099 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.116 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.131 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.133 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.135 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.137 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.138 sec)
+
++-----+---------+--------+------+
+| sid | sname   | rating | age  |
++-----+---------+--------+------+
+|   1 | Alex    |      8 | 25.5 |
+|   2 | Barbara |      8 | 30.0 |
+|   3 | Charlie |      5 | 22.0 |
+|   4 | Diana   |      9 | 35.0 |
+|   5 | Edward  |      3 | 28.5 |
++-----+---------+--------+------+
+5 rows in set (0.138 sec)
+
++-----+---------+--------+
+| bid | bname   | color  |
++-----+---------+--------+
+| 101 | Aurora  | red    |
+| 102 | Breeze  | green  |
+| 103 | Calypso | yellow |
+| 104 | Dolphin | white  |
+| 105 | Eclipse | black  |
++-----+---------+--------+
+5 rows in set (0.138 sec)
+
++-----+-----+------------+
+| sid | bid | date       |
++-----+-----+------------+
+|   1 | 101 | 2025-04-01 |
+|   2 | 101 | 2025-04-02 |
+|   1 | 102 | 2025-04-06 |
+|   3 | 103 | 2025-04-03 |
++-----+-----+------------+
+4 rows in set (0.139 sec)
