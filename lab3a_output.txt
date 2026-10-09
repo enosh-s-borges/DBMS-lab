@@ -73,3 +73,28 @@ Query OK, 1 row affected (0.138 sec)
 |   3 | 103 | 2025-04-03 |
 +-----+-----+------------+
 4 rows in set (0.139 sec)
+
+ER DIAGRAM
+
+SAILORS and BOAT are many-to-many. RSERVERS is the associative entity:
+each row is one sailor reserving one boat on one date.
+
+                       1         N                        N         1
++--------------------+             +--------------------+             +--------------------+
+|      SAILORS       |             |      RSERVERS      |             |        BOAT        |
++--------------------+<------------+--------------------+------------>+--------------------+
+| PK  sid            |             | PK, FK  sid        |             | PK  bid            |
+|     sname          |             | PK, FK  bid        |             |     bname          |
+|     rating         |             | PK      date       |             |     color          |
+|     age            |             +--------------------+             +--------------------+
++--------------------+
+
+The arrow points to the referenced primary key (the 1 side). The N side
+is always RSERVERS.
+
+Primary key of RSERVERS: (sid, bid, date)
+  sid references SAILORS.sid
+  bid references BOAT.bid
+Every reservation has exactly one sailor and exactly one boat.
+A sailor or a boat may have no reservations. The same sailor may
+reserve the same boat on another date.

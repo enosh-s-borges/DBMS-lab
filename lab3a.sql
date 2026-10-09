@@ -1,17 +1,17 @@
 /*
-Data Definition Language (DDL) commands in RDBMS
+Data Definition Language (DDL) commands in RDBMS 
+Consider the database schemas given below. 
+Write  ER  diagram  and  schema  diagram.  The  primary  keys  are underlined and the data types are specified. 
+Create  tables  for  the  following  schema  listed  below  by  properly specifying the primary keys and foreign keys. 
+Enter at least five tuples for each relation. 
+Altering tables, Adding and Dropping different types of constraints. 
+Also adding and dropping fields in to the relational schemas of the listed problems. 
+Delete, Update operations 
 
-Sailors database schema (primary keys are marked PK):
-  SAILORS (sid PK, sname, rating, age)
-  BOAT (bid PK, bname, color)
-  RSERVERS (sid PK/FK, bid PK/FK, date PK)
-
-ER relationship: Sailors and Boats have a many-to-many relationship,
-represented by RSERVERS. A sailor can reserve many boats and a boat can be
-reserved by many sailors. Each reservation is identified by (sid, bid, date).
-
-The foreign keys below use ON DELETE CASCADE so reservations are removed
-automatically when their sailor or boat is deleted.
+A. Sailors database 
+SAILORS (sid, sname, rating, age) 
+BOAT(bid, bname, color) 
+RSERVERS (sid, bid, date)
 */
 
 CREATE TABLE Sailors (
