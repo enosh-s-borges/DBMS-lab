@@ -1,125 +1,205 @@
-/*
-Data Definition Language (DDL) commands in RDBMS Consider the database schemas given below. 
-Write  ER  diagram  and  schema  diagram.  The  primary  keys  are underlined and the data types are specified. 
-Create  tables  for  the  following  schema  listed  below  by  properly specifying the primary keys and foreign keys. 
-Enter at least five tuples for each relation. Altering tables, Adding and Dropping different types of constraints. 
-Also adding and dropping fields in to the relational schemas of the listed problems. 
-Delete, Update operations 
-B. Insurance database 
-PERSON (driver id#: string, name: string, address: string) 
-CAR (regno: string, model: string, year: int) 
-ACCIDENT (report_ number: int, acc_date: date, location: string) 
-OWNS (driver id#: string, regno: string) 
+/* Data Definition Language (DDL) commands in RDBMS
+Consider the database schemas given below.
+Write ER diagram and schema diagram. The primary keys are 
+underlined and the data types are specified.
+Create tables for the following schema listed below by properly 
+specifying the primary keys and foreign keys.
+Enter at least five tuples for each relation.
+Altering tables,
+Adding and Dropping different types of constraints.
+Also adding and dropping fields in to the relational schemas of the listed problems.
+Delete, Update operations
+
+B. Insurance database
+PERSON (driver id#: string, name: string, address: string)
+CAR (regno: string, model: string, year: int)
+ACCIDENT (report_ number: int, acc_date: date, location: string)
+OWNS (driver id#: string, regno: string)
 PARTICIPATED(driver id#:string, regno:string, report_ number: 
 int,damage_amount: int)
 */
 
--- ER relationships: PERSON and CAR are many-to-many through OWNS.
--- PARTICIPATED associates a person, car, and accident and stores the damage.
+/* create all the tables to find whether the user is capable for claiming the insurance*/
 
-CREATE TABLE Person (
-    driver_id  VARCHAR(20) PRIMARY KEY,
-    name       VARCHAR(100) NOT NULL,
-    address    VARCHAR(200) NOT NULL
+CREATE DATABASE Insurance;
+USE Insurance;
+
+-- Create PERSON table
+CREATE TABLE PERSON (
+    driver_id VARCHAR(50) PRIMARY KEY,
+    name VARCHAR(100),
+    address VARCHAR(100)
 );
 
-CREATE TABLE Car (
-    regno      VARCHAR(20) PRIMARY KEY,
-    model      VARCHAR(60) NOT NULL,
-    `year`     INT NOT NULL
+-- Create CAR table
+CREATE TABLE CAR (
+    regno VARCHAR(20) PRIMARY KEY,
+    model VARCHAR(50),
+    year INT
 );
 
-CREATE TABLE Accident (
-    report_number  INT PRIMARY KEY,
-    acc_date       DATE NOT NULL,
-    location       VARCHAR(100) NOT NULL
+-- Create ACCIDENT table
+CREATE TABLE ACCIDENT (
+    report_number INT PRIMARY KEY,
+    acc_date DATE,
+    location VARCHAR(100)
 );
 
-CREATE TABLE Owns (
-    driver_id  VARCHAR(20) NOT NULL,
-    regno      VARCHAR(20) NOT NULL,
+-- Create OWNS table
+CREATE TABLE OWNS (
+    driver_id VARCHAR(50),
+    regno VARCHAR(20),
     PRIMARY KEY (driver_id, regno),
-    CONSTRAINT fk_owns_person FOREIGN KEY (driver_id)
-        REFERENCES Person (driver_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT fk_owns_car FOREIGN KEY (regno)
-        REFERENCES Car (regno) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (driver_id) REFERENCES PERSON(driver_id),
+    FOREIGN KEY (regno) REFERENCES CAR(regno)
 );
 
-CREATE TABLE Participated (
-    driver_id      VARCHAR(20) NOT NULL,
-    regno          VARCHAR(20) NOT NULL,
-    report_number  INT NOT NULL,
-    damage_amount  INT NOT NULL,
+-- Create PARTICIPATED table
+CREATE TABLE PARTICIPATED (
+    driver_id VARCHAR(50),
+    regno VARCHAR(20),
+    report_number INT,
+    damage_amount INT,
     PRIMARY KEY (driver_id, regno, report_number),
-    CONSTRAINT fk_participated_person FOREIGN KEY (driver_id)
-        REFERENCES Person (driver_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT fk_participated_car FOREIGN KEY (regno)
-        REFERENCES Car (regno) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT fk_participated_accident FOREIGN KEY (report_number)
-        REFERENCES Accident (report_number) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (driver_id) REFERENCES PERSON(driver_id),
+    FOREIGN KEY (regno) REFERENCES CAR(regno),
+    FOREIGN KEY (report_number) REFERENCES ACCIDENT(report_number)
 );
 
--- Insert at least five tuples into every relation.
-INSERT INTO Person (driver_id, name, address) VALUES
-('D001', 'Aarav Sharma', 'Mysuru'),
-('D002', 'Diya Rao', 'Bengaluru'),
-('D003', 'Ishaan Kumar', 'Mangaluru'),
-('D004', 'Meera Nair', 'Hubballi'),
-('D005', 'Kabir Das', 'Mysuru');
+-- insert in PERSON table
+INSERT INTO PERSON (driver_id,name, address) VALUES
+    ("D01", "JOHN", "1st main"),
+    ("D02", "JAMES","2nd main"),
+    ("D03", "PETER", "3rd main"),
+    ("D04", "ROCK", "4th main"),
+    ("D05", "KEVIN", "5th main");
+    
+    -- check if the data is inserted in PERSON table
+    SELECT * FROM PERSON;
+ 
+ -- insert values in the CAR table
+ INSERT INTO CAR (regno,model,year) VALUES
+    ("R01", "Sedan", "2007"),
+    ("R02", "Sports","2010"),
+    ("R03", "XUV", "2011"),
+    ("R04", "Hatchback", "2015"),
+    ("R05", "SUV", "2019");
+    
+ -- check if the data is inserted in CAR table
+    SELECT * FROM CAR;   
+    
+INSERT INTO  ACCIDENT(report_number,acc_date,location) VALUES
+    (112, '2023-05-11', "Street A"),
+    (113, '2023-05-12',"Street B"),
+    (114, '2023-05-13', "Street C"),
+    (115, '2023-05-14', "Street D"),
+    (116, '2023-05-15',"Street E");   
+    
+    -- check if the data is inserted in ACCIDENT table
+    SELECT * FROM ACCIDENT; 
+    
+ INSERT INTO OWNS (driver_id, regno) VALUES
+('D01', 'R01'),
+('D02', 'R02'),
+('D03', 'R03'),
+('D04', 'R04'),
+('D05', 'R05');   
 
-INSERT INTO Car (regno, model, `year`) VALUES
-('KA09AB1001', 'Honda City', 2020),
-('KA03CD2002', 'Maruti Swift', 2018),
-('KA19EF3003', 'Hyundai i20', 2022),
-('KA25GH4004', 'Tata Nexon', 2021),
-('KA09IJ5005', 'Toyota Innova', 2019);
+ -- check if the data is inserted in OWNS table
+    SELECT * FROM OWNS; 
+    
+    INSERT INTO PARTICIPATED (driver_id, regno, report_number, damage_amount) VALUES
+('D01', 'R01', 112, 5780),
+('D02', 'R02', 113, 6780),
+('D03', 'R03', 114, 7780),
+('D04', 'R04', 115, 8780),
+('D05', 'R05', 116, 9500);
 
-INSERT INTO Accident (report_number, acc_date, location) VALUES
-(5001, '2025-01-10', 'Mysuru'),
-(5002, '2025-02-14', 'Bengaluru'),
-(5003, '2025-03-08', 'Mangaluru'),
-(5004, '2025-04-21', 'Hubballi'),
-(5005, '2025-05-17', 'Mysuru');
+-- check if the data is inserted in PARTICIPATED table
+    SELECT * FROM  PARTICIPATED; 
+    
+    -- alter tables
+    
+    -- alter PERSON table
+ALTER TABLE PERSON
+ADD age INT;
 
-INSERT INTO Owns (driver_id, regno) VALUES
-('D001', 'KA09AB1001'),
-('D002', 'KA03CD2002'),
-('D003', 'KA19EF3003'),
-('D004', 'KA25GH4004'),
-('D005', 'KA09IJ5005');
+UPDATE PERSON
+SET age=52 
+WHERE driver_id="D01";
 
-INSERT INTO Participated (driver_id, regno, report_number, damage_amount) VALUES
-('D001', 'KA09AB1001', 5001, 12000),
-('D002', 'KA03CD2002', 5002, 8000),
-('D003', 'KA19EF3003', 5003, 15000),
-('D004', 'KA25GH4004', 5004, 22000),
-('D005', 'KA09IJ5005', 5005, 5000);
+UPDATE PERSON
+SET age=53 
+WHERE driver_id="D02";
 
--- Add and remove a field.
-ALTER TABLE Person ADD COLUMN phone VARCHAR(15);
-ALTER TABLE Person DROP COLUMN phone;
+UPDATE PERSON
+SET age=57
+WHERE driver_id="D03";
 
--- Add and drop a CHECK constraint (MariaDB syntax).
-ALTER TABLE Participated
-    ADD CONSTRAINT chk_damage_amount CHECK (damage_amount >= 0);
-ALTER TABLE Participated DROP CONSTRAINT chk_damage_amount;
+UPDATE PERSON
+SET age=45 
+WHERE driver_id="D04";
 
--- Add and drop a UNIQUE constraint.
-ALTER TABLE Car ADD CONSTRAINT uq_car_regno_model UNIQUE (regno, model);
-ALTER TABLE Car DROP CONSTRAINT uq_car_regno_model;
+UPDATE PERSON
+SET age=46
+WHERE driver_id="D05";
 
--- Update and delete examples.
-UPDATE Person SET address = 'Vijayanagar, Mysuru' WHERE driver_id = 'D001';
-UPDATE Car SET model = 'Honda City ZX' WHERE regno = 'KA09AB1001';
-UPDATE Participated SET damage_amount = 13000
-WHERE driver_id = 'D001' AND regno = 'KA09AB1001' AND report_number = 5001;
+-- check the PERSON table if it is altered ??
+SELECT * FROM PERSON;
 
-DELETE FROM Participated
-WHERE driver_id = 'D005' AND regno = 'KA09IJ5005' AND report_number = 5005;
+-- alter the CAR table 
+ALTER TABLE CAR
+ADD color VARCHAR(20);
 
--- Display the resulting tables.
-SELECT * FROM Person;
-SELECT * FROM Car;
-SELECT * FROM Accident;
-SELECT * FROM Owns;
-SELECT * FROM Participated;
+UPDATE CAR
+SET color= "Yellow"
+WHERE regno IN ("R01","R02","R03","R04","R05");
+
+-- check if the CAR tabel if it is altered??
+SELECT * FROM CAR;
+
+-- alter the OWNS table
+ALTER TABLE OWNS
+ADD purchase_date DATE;
+
+UPDATE OWNS
+SET purchase_date= "2023-07-23"
+WHERE driver_id IN ("D01","D02","D03","D04","D05");
+
+-- check if the OWNS table is altered or not??
+SELECT * FROM OWNS;
+
+-- adding and dropping constraints
+-- ensures that no two person have the same driver_id
+ALTER TABLE PERSON
+ADD CONSTRAINT unique_driver_id UNIQUE (driver_id);
+
+-- ensures that no CAR have a year less than 1980 
+ALTER TABLE CAR
+ADD CONSTRAINT check_year CHECK (year >= 1980);
+
+-- drop the check_year constraints
+ALTER TABLE CAR
+DROP CONSTRAINT check_year;
+
+-- adding and dropping fields in to the relational schemas 
+
+-- add accident description
+ALTER TABLE ACCIDENT
+ADD description VARCHAR(100);
+
+-- -- dropping feilds
+-- Dropping the description field
+ALTER TABLE ACCIDENT
+DROP COLUMN description;
+
+-- update and delete operations
+
+-- update color in CAR Table
+UPDATE CAR
+SET color = 'Orange'
+WHERE regno = 'R01';
+
+-- delete from PARTICIPATED Table
+DELETE FROM PARTICIPATED
+WHERE driver_id="D01";
