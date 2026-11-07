@@ -68,11 +68,11 @@ SELECT * FROM DEPARTMENT;
 +-----+-----+--------+
      | MgrSSN | MgrStartDate |
 +-----+-----------------------+--------+--------------+
-|   1 | Finance Department    |    113 | 2020-01-10   |
-|   2 | Marketing Department  |    114 | 2020-02-10   |
-|   3 | Research Department   |    115 | 2020-03-10   |
-|   4 | Sales Department      |    115 | 2020-04-10   |
-|   5 | Production Department |    112 | 2020-05-10   |
+|   1 | Finance Department    |    113 | 2026-01-10   |
+|   2 | Marketing Department  |    114 | 2026-02-10   |
+|   3 | Research Department   |    115 | 2026-03-10   |
+|   4 | Sales Department      |    115 | 2026-04-10   |
+|   5 | Production Department |    112 | 2026-05-10   |
 +-----+-----------------------+--------+--------------+
 SELECT * FROM DLOCATION;
 +-----+--------------+
@@ -156,11 +156,11 @@ SELECT * FROM DEPARTMENT;
 +-----+-----------------------+--------+--------------+------------------------+
 | DNo | DName                 | MgrSSN | MgrStartDate | Department_Expenditure |
 +-----+-----------------------+--------+--------------+------------------------+
-|   1 | Finance Department    |    113 | 2020-01-10   |                   NULL |
-|   2 | Marketing Department  |    114 | 2020-02-10   |                   NULL |
-|   3 | Research Department   |    115 | 2020-03-10   |                   NULL |
-|   4 | Sales Department      |    115 | 2020-04-10   |                   NULL |
-|   5 | Production Department |    112 | 2020-05-10   |                   NULL |
+|   1 | Finance Department    |    113 | 2026-01-10   |                   NULL |
+|   2 | Marketing Department  |    114 | 2026-02-10   |                   NULL |
+|   3 | Research Department   |    115 | 2026-03-10   |                   NULL |
+|   4 | Sales Department      |    115 | 2026-04-10   |                   NULL |
+|   5 | Production Department |    112 | 2026-05-10   |                   NULL |
 +-----+-----------------------+--------+--------------+------------------------+
   
 -- truncate works_on

@@ -102,11 +102,11 @@ SELECT * FROM EMPLOYEE;
 -- Insert data into the DEPARTMENT table
 INSERT INTO DEPARTMENT (DNo, DName,MgrSSN,MgrStartDate)
 VALUES
-    (1, 'Finance Department', 113,'2020-01-10'),
-    (2, 'Marketing Department',114, '2020-02-10'),
-    (3, 'Research Department',115, '2020-03-10'),
-    (4, 'Sales Department', 115,'2020-04-10'),
-    (5, 'Production Department',112, '2020-05-10');
+    (1, 'Finance Department', 113,'2026-01-10'),
+    (2, 'Marketing Department',114, '2026-02-10'),
+    (3, 'Research Department',115, '2026-03-10'),
+    (4, 'Sales Department', 115,'2026-04-10'),
+    (5, 'Production Department',112, '2026-05-10');
    
 -- check inserted data   
 SELECT * FROM DEPARTMENT;

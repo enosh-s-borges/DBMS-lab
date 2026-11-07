@@ -90,11 +90,11 @@ SELECT * FROM Customer;
 -- Insert data into the Order table
 INSERT INTO Order_(order_, odate, cust, order_amt) 
 VALUES
-    (201, '2023-04-11', 101, 1567),
-    (202, '2023-04-12', 102, 2567),
-    (203, '2023-04-13', 103, 3567),
-    (204, '2023-04-14', 104, 4567),
-    (205, '2023-04-15', 105, 5567);
+    (201, '2026-04-11', 101, 1567),
+    (202, '2026-04-12', 102, 2567),
+    (203, '2026-04-13', 103, 3567),
+    (204, '2026-04-14', 104, 4567),
+    (205, '2026-04-15', 105, 5567);
 -- check if the data is inserted
 SELECT * FROM Order_; 
 
@@ -134,11 +134,11 @@ SELECT * FROM Warehouse;
 
 -- Insert data into Shipment Table
 INSERT INTO Shipment (order_, warehouse, ship_date) VALUES
-    (201, 901, '2023-05-01'),
-    (202, 902, '2023-05-02'),
-    (203, 903, '2023-05-03'),
-    (204, 904, '2023-05-04'),
-    (205, 905, '2023-05-05');
+    (201, 901, '2026-05-01'),
+    (202, 902, '2026-05-02'),
+    (203, 903, '2026-05-03'),
+    (204, 904, '2026-05-04'),
+    (205, 905, '2026-05-05');
     
 -- check if the data is inserted
 SELECT * FROM Shipment; 
@@ -148,31 +148,31 @@ SELECT * FROM Shipment;
 -- alter the Order_  table
 -- add the estimated delivery date
 
-ALTER TABLE order_
+ALTER TABLE Order_
 ADD est_delivery DATE;
 
-UPDATE order_
-SET est_delivery = '2023-05-23'
+UPDATE Order_
+SET est_delivery = '2026-05-23'
 WHERE order_=201;
 
-UPDATE order_
-SET est_delivery = '2023-05-24'
+UPDATE Order_
+SET est_delivery = '2026-05-24'
 WHERE order_=202;
 
-UPDATE order_
-SET est_delivery = '2023-05-25'
+UPDATE Order_
+SET est_delivery = '2026-05-25'
 WHERE order_=203;
 
-UPDATE order_
-SET est_delivery = '2023-05-26'
+UPDATE Order_
+SET est_delivery = '2026-05-26'
 WHERE order_=204;
 
-UPDATE order_
-SET est_delivery = '2023-05-27'
+UPDATE Order_
+SET est_delivery = '2026-05-27'
 WHERE order_=205;
 
 -- check if the table is altered or not
-SELECT * FROM order_;
+SELECT * FROM Order_;
 
 
 -- alter the Item table

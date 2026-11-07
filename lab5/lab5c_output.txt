@@ -1,0 +1,221 @@
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 0 rows affected (0.001 sec)
+
+Query OK, 0 rows affected (0.011 sec)
+
+Query OK, 0 rows affected (0.017 sec)
+
+Query OK, 0 rows affected (0.024 sec)
+
+Query OK, 0 rows affected (0.032 sec)
+
+Query OK, 0 rows affected (0.037 sec)
+
+Query OK, 0 rows affected (0.045 sec)
+
+Query OK, 5 rows affected (0.046 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++------+-------+-------+
+| cust | cname | city  |
++------+-------+-------+
+|  101 | JOHN  | City1 |
+|  102 | PETER | City2 |
+|  103 | JAMES | City3 |
+|  104 | KEVIN | City4 |
+|  105 | HARRY | City5 |
++------+-------+-------+
+5 rows in set (0.046 sec)
+
+Query OK, 5 rows affected (0.048 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++--------+------------+------+-----------+
+| order_ | odate      | cust | order_amt |
++--------+------------+------+-----------+
+|    201 | 2026-04-11 |  101 |      1567 |
+|    202 | 2026-04-12 |  102 |      2567 |
+|    203 | 2026-04-13 |  103 |      3567 |
+|    204 | 2026-04-14 |  104 |      4567 |
+|    205 | 2026-04-15 |  105 |      5567 |
++--------+------------+------+-----------+
+5 rows in set (0.048 sec)
+
+Query OK, 5 rows affected (0.050 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++------+-----------+
+| item | unitprice |
++------+-----------+
+| 1001 |       100 |
+| 1002 |       200 |
+| 1003 |       300 |
+| 1004 |       400 |
+| 1005 |       500 |
++------+-----------+
+5 rows in set (0.050 sec)
+
+Query OK, 5 rows affected (0.051 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++--------+------+------+
+| order_ | item | qty  |
++--------+------+------+
+|    201 | 1001 |   10 |
+|    202 | 1002 |   11 |
+|    203 | 1003 |   12 |
+|    204 | 1004 |   13 |
+|    205 | 1005 |   14 |
++--------+------+------+
+5 rows in set (0.052 sec)
+
+Query OK, 5 rows affected (0.053 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++-----------+-------+
+| warehouse | city  |
++-----------+-------+
+|       901 | City1 |
+|       902 | City2 |
+|       903 | City3 |
+|       904 | City4 |
+|       905 | City5 |
++-----------+-------+
+5 rows in set (0.053 sec)
+
+Query OK, 5 rows affected (0.055 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++--------+-----------+------------+
+| order_ | warehouse | ship_date  |
++--------+-----------+------------+
+|    201 |       901 | 2026-05-01 |
+|    202 |       902 | 2026-05-02 |
+|    203 |       903 | 2026-05-03 |
+|    204 |       904 | 2026-05-04 |
+|    205 |       905 | 2026-05-05 |
++--------+-----------+------------+
+5 rows in set (0.055 sec)
+
+Query OK, 0 rows affected (0.067 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.068 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.069 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.070 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.071 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.072 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
++--------+------------+------+-----------+--------------+
+| order_ | odate      | cust | order_amt | est_delivery |
++--------+------------+------+-----------+--------------+
+|    201 | 2026-04-11 |  101 |      1567 | 2026-05-23   |
+|    202 | 2026-04-12 |  102 |      2567 | 2026-05-24   |
+|    203 | 2026-04-13 |  103 |      3567 | 2026-05-25   |
+|    204 | 2026-04-14 |  104 |      4567 | 2026-05-26   |
+|    205 | 2026-04-15 |  105 |      5567 | 2026-05-27   |
++--------+------------+------+-----------+--------------+
+5 rows in set (0.072 sec)
+
+Query OK, 0 rows affected (0.082 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.084 sec)
+Rows matched: 5  Changed: 5  Warnings: 0
+
++------+-----------+---------------+
+| item | unitprice | delivery_cost |
++------+-----------+---------------+
+| 1001 |       100 |            80 |
+| 1002 |       200 |            80 |
+| 1003 |       300 |            80 |
+| 1004 |       400 |            80 |
+| 1005 |       500 |            80 |
++------+-----------+---------------+
+5 rows in set (0.084 sec)
+
+Query OK, 0 rows affected (0.100 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.115 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.127 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.139 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.140 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.141 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.142 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.144 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.145 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
++--------+------------+------+-----------+--------------+--------------+
+| order_ | odate      | cust | order_amt | est_delivery | delivery_add |
++--------+------------+------+-----------+--------------+--------------+
+|    201 | 2026-04-11 |  101 |      1567 | 2026-05-23   | Address1     |
+|    202 | 2026-04-12 |  102 |      2567 | 2026-05-24   | Address2     |
+|    203 | 2026-04-13 |  103 |      3567 | 2026-05-25   | Address3     |
+|    204 | 2026-04-14 |  104 |      4567 | 2026-05-26   | Address4     |
+|    205 | 2026-04-15 |  105 |      5567 | 2026-05-27   | Address5     |
++--------+------------+------+-----------+--------------+--------------+
+5 rows in set (0.145 sec)
+
+Query OK, 0 rows affected (0.162 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.177 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 5 rows affected (0.178 sec)
+Rows matched: 5  Changed: 5  Warnings: 0
+
++--------+-----------+------------+--------------+
+| order_ | warehouse | ship_date  | delivery_exe |
++--------+-----------+------------+--------------+
+|    201 |       901 | 2026-05-01 | executive1   |
+|    202 |       902 | 2026-05-02 | executive1   |
+|    203 |       903 | 2026-05-03 | executive1   |
+|    204 |       904 | 2026-05-04 | executive1   |
+|    205 |       905 | 2026-05-05 | executive1   |
++--------+-----------+------------+--------------+
+5 rows in set (0.179 sec)
+
+Query OK, 0 rows affected (0.195 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.211 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [Order_processing]> SELECT * FROM Shipment;
++--------+-----------+------------+---------------------+
+| order_ | warehouse | ship_date  | cancellation_status |
++--------+-----------+------------+---------------------+
+|    201 |       901 | 2026-05-01 | no                  |
+|    202 |       902 | 2026-05-02 | no                  |
+|    203 |       903 | 2026-05-03 | no                  |
+|    204 |       904 | 2026-05-04 | no                  |
+|    205 |       905 | 2026-05-05 | no                  |
++--------+-----------+------------+---------------------+
+5 rows in set (0.001 sec)
