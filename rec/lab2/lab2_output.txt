@@ -1,0 +1,46 @@
+Query OK, 0 rows affected (0.013 sec)
+
+Query OK, 10 rows affected (0.014 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+Query OK, 1 row affected (0.017 sec)
+
+Query OK, 1 row affected (0.019 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+Query OK, 1 row affected (0.021 sec)
+
++------+---------------+--------+----------+--------------------------+------------+--------------------+
+| SID  | NAME          | BRANCH | SEMESTER | ADDRESS                  | PHONE      | EMAIL              |
++------+---------------+--------+----------+--------------------------+------------+--------------------+
+| 1001 | Aarav Sharma  | CSE    |        3 | Vijayanagar, Mysuru      | 9876500001 | aarav@example.com  |
+| 1002 | Diya Rao      | ECE    |        5 | Vijayanagar, Mysuru      | 9876500002 | diya@example.com   |
+| 1003 | Ishaan Kumar  | CSE    |        3 | Jayalakshmipuram, Mysuru | 9876500003 | ishaan@example.com |
+| 1004 | Meera Nair    | ISE    |        7 | Kuvempunagar, Mysuru     | 9876500004 | meera@example.com  |
+| 1005 | Kabir Das     | ME     |        5 | Saraswathipuram, Mysuru  | 9876500005 | kabir@example.com  |
+| 1006 | Ananya Shetty | CSE    |        1 | Kuvempunagar, Mysuru     | 9876500006 | ananya@example.com |
+| 1007 | Rohan Patel   | EEE    |        7 | Hebbal, Mysuru           | 9876500007 | rohan@example.com  |
+| 1008 | Sara Khan     | CSE    |        5 | Vijayanagar, Mysuru      | 9876500008 | sara@example.com   |
+| 1009 | Vikram Joshi  | CIVIL  |        3 | Kuvempunagar, Mysuru     | 9876500009 | vikram@example.com |
+| 1011 | Pooja Verma   | CSE    |        1 | Kuvempunagar, Mysuru     | 9876500011 | pooja@example.com  |
++------+---------------+--------+----------+--------------------------+------------+--------------------+
+10 rows in set (0.021 sec)
+
++------+---------------+--------+----------+--------------------------+------------+--------------------+
+| SID  | NAME          | BRANCH | SEMESTER | ADDRESS                  | PHONE      | EMAIL              |
++------+---------------+--------+----------+--------------------------+------------+--------------------+
+| 1001 | Aarav Sharma  | CSE    |        3 | Vijayanagar, Mysuru      | 9876500001 | aarav@example.com  |
+| 1003 | Ishaan Kumar  | CSE    |        3 | Jayalakshmipuram, Mysuru | 9876500003 | ishaan@example.com |
+| 1006 | Ananya Shetty | CSE    |        1 | Kuvempunagar, Mysuru     | 9876500006 | ananya@example.com |
+| 1008 | Sara Khan     | CSE    |        5 | Vijayanagar, Mysuru      | 9876500008 | sara@example.com   |
+| 1011 | Pooja Verma   | CSE    |        1 | Kuvempunagar, Mysuru     | 9876500011 | pooja@example.com  |
++------+---------------+--------+----------+--------------------------+------------+--------------------+
+5 rows in set (0.021 sec)
+
++------+---------------+--------+----------+----------------------+------------+--------------------+
+| SID  | NAME          | BRANCH | SEMESTER | ADDRESS              | PHONE      | EMAIL              |
++------+---------------+--------+----------+----------------------+------------+--------------------+
+| 1006 | Ananya Shetty | CSE    |        1 | Kuvempunagar, Mysuru | 9876500006 | ananya@example.com |
+| 1011 | Pooja Verma   | CSE    |        1 | Kuvempunagar, Mysuru | 9876500011 | pooja@example.com  |
++------+---------------+--------+----------+----------------------+------------+--------------------+
+2 rows in set (0.022 sec)

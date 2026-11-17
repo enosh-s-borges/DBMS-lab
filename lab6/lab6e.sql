@@ -85,7 +85,6 @@ CREATE TABLE WORKS_ON (
 /* because of the circular dependency we cannot include the DNo without inserting data in 
 DEPARTMENT Table*/
 
-
 -- Insert data in Employee Table without DNo
 INSERT INTO EMPLOYEE (SSN, Name, Address, Sex, Salary, SuperSSN)
 VALUES
@@ -97,7 +96,6 @@ VALUES
 
 -- check inserted input
 SELECT * FROM EMPLOYEE;
-  
 
 -- Insert data into the DEPARTMENT table
 INSERT INTO DEPARTMENT (DNo, DName,MgrSSN,MgrStartDate)
@@ -107,7 +105,7 @@ VALUES
     (3, 'Research Department',115, '2026-03-10'),
     (4, 'Sales Department', 115,'2026-04-10'),
     (5, 'Production Department',112, '2026-05-10');
-   
+
 -- check inserted data   
 SELECT * FROM DEPARTMENT;
 
