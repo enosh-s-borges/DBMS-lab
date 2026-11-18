@@ -76,20 +76,20 @@ INSERT INTO Reserves VALUES
 
 SELECT * FROM Reserves;
 
---1. Find the colours of boats reserved by Albert
---Method 1: Using JOIN
+-- 1. Find the colours of boats reserved by Albert
+-- Method 1: Using JOIN
 SELECT b.color
 FROM Boat b
 JOIN Reserves r ON b.bid = r.bid
 JOIN Sailors s ON r.sid = s.sid
 WHERE s.sname = 'Albert';
---Method 2: Using Subquery
+-- Method 2: Using Subquery
 SELECT b.color
 FROM Boat b
 JOIN Reserves r ON b.bid = r.bid
 WHERE r.sid = (SELECT sid FROM Sailors WHERE sname = 'Albert');
 
---2. Find all sailor id’s of sailors who have a rating of at least 8 or reserved boat 103
+-- 2. Find all sailor id’s of sailors who have a rating of at least 8 or reserved boat 103
 /*LEFT JOIN is used to ensure that all rows from the Sailors table are included in the result set, 
 regardless of whether they have a matching row in the Reserves table.*/
 SELECT DISTINCT s.sid
@@ -97,8 +97,8 @@ FROM Sailors s
 LEFT JOIN Reserves r ON s.sid = r.sid
 WHERE s.rating >= 8 OR r.bid = 103;
 
---3. Find the names of sailors who have not reserved a boat whose name contains the string “storm”. Order the names in ascending order.
---"storm" order the names in ascending order.
+-- 3. Find the names of sailors who have not reserved a boat whose name contains the string “storm”. Order the names in ascending order.
+-- "storm" order the names in ascending order.
 SELECT s.sname
 FROM Sailors s
 WHERE s.sid NOT IN (
@@ -109,8 +109,8 @@ WHERE s.sid NOT IN (
 )
 ORDER BY s.sname ASC;
 
----4. Find the names of sailors who have reserved all boats.
---Method 1: Using NOT EXISTS
+-- 4. Find the names of sailors who have reserved all boats.
+-- Method 1: Using NOT EXISTS
 SELECT s.sname
 FROM Sailors s
 WHERE NOT EXISTS (
@@ -122,24 +122,24 @@ WHERE NOT EXISTS (
         WHERE r.sid = s.sid AND r.bid = b.bid
     )
 );
---Method 2: Using COUNT
+-- Method 2: Using COUNT
 SELECT s.sname
 FROM Sailors s
 JOIN Reserves r ON s.sid = r.sid
 GROUP BY s.sid
 HAVING COUNT(DISTINCT r.bid) = (SELECT COUNT(*) FROM Boat);
 
---5. Find the name and age of the oldest sailor.
+-- 5. Find the name and age of the oldest sailor.
 SELECT sname, age
 FROM Sailors
 ORDER BY age DESC
 LIMIT 1;
---Other Query:
+-- Other Query:
 SELECT sname, age
 FROM Sailors
 WHERE age = (SELECT MAX(age) FROM Sailors);
 
---6. For each boat which was reserved by at least 5 sailors with age >= 40, find the boat id and the average age of such sailors.
+-- 6. For each boat which was reserved by at least 5 sailors with age >= 40, find the boat id and the average age of such sailors.
 SELECT r.bid AS Boat_id, AVG(s.age) AS avg_age
 FROM Reserves r
 JOIN Sailors s ON r.sid = s.sid
@@ -147,32 +147,32 @@ WHERE s.age >= 40
 GROUP BY r.bid
 HAVING COUNT(r.sid) >= 5;
 
----7. Create a view that shows the names and colours of all the boats that have been reserved by a sailor with a specific rating.
+-- 7. Create a view that shows the names and colours of all the boats that have been reserved by a sailor with a specific rating.
 CREATE VIEW BoatsReservedByRating AS
 SELECT DISTINCT s.sname AS Sailor_Name, b.bname AS Boat_Name, b.color AS Boat_Color
 FROM Sailors s
 JOIN Reserves r ON s.sid = r.sid
-JOIN Boat b ON r.bid = b.bid;
+JOIN Boat b ON r.bid = b.bid
 WHERE s.rating = 8;
---check
+-- check
 SELECT * FROM BoatsReservedByRating;
 
----8. Create a trigger that prevents boats from being deleted if they have active reservations.
+-- 8. Create a trigger that prevents boats from being deleted if they have active reservations.
 DELIMITER //
 CREATE TRIGGER PreventBoatDeletion
 BEFORE DELETE ON Boat
 FOR EACH ROW
 BEGIN
 DECLARE reservation_count INT;
---Check if boat has active reservations
+-- Check if boat has active reservations
 SELECT COUNT(*) INTO reservation_count
 FROM Reserves
 WHERE bid = OLD.bid;
---If there are active reservations, prevent deletion
+-- If there are active reservations, prevent deletion
 IF reservation_count > 0 THEN
     SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Cannot delete boat with active reservations.';
 END IF;
-END;
-//DELIMITER ;
---Check trigger
+END //
+DELIMITER ;
+-- Check trigger
 DELETE FROM Boat WHERE bid = 101;
