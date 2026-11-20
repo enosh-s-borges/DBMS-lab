@@ -1,0 +1,161 @@
+Query OK, 0 rows affected, 1 warning (0.001 sec)
+
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 0 rows affected (0.001 sec)
+
+Query OK, 0 rows affected (0.012 sec)
+
+Query OK, 0 rows affected (0.021 sec)
+
+Query OK, 0 rows affected (0.029 sec)
+
+Query OK, 0 rows affected (0.037 sec)
+
+Query OK, 0 rows affected (0.047 sec)
+
+Query OK, 5 rows affected (0.048 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++-----------+---------+----------+
+| driver_id | name    | address  |
++-----------+---------+----------+
+| D101      | Driver1 | Address1 |
+| D102      | Driver2 | Address2 |
+| D103      | Smith   | Address3 |
+| D104      | Driver4 | Address4 |
+| D105      | Driver5 | Address5 |
++-----------+---------+----------+
+5 rows in set (0.049 sec)
+
+Query OK, 5 rows affected (0.050 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++------------+--------+------+
+| regno      | model  | year |
++------------+--------+------+
+| KA01AB1234 | Swift  | 2020 |
+| KA02CD5678 | Mazda  | 2017 |
+| KA03EF9012 | Alto   | 2015 |
+| KA04GH3456 | Triber | 2019 |
+| KA05IJ7890 | Tiago  | 2018 |
++------------+--------+------+
+5 rows in set (0.050 sec)
+
+Query OK, 6 rows affected (0.053 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
++-----------+------------+-----------+
+| report_no | acc_date   | location  |
++-----------+------------+-----------+
+|     43627 | 2021-04-05 | Location1 |
+|     43628 | 2019-12-16 | Location2 |
+|     43629 | 2020-05-14 | Location3 |
+|     43630 | 2019-08-30 | Location4 |
+|     43631 | 2021-01-21 | Location5 |
+|     43632 | 2021-01-21 | Location5 |
++-----------+------------+-----------+
+6 rows in set (0.053 sec)
+
+Query OK, 5 rows affected (0.055 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++-----------+------------+
+| driver_id | regno      |
++-----------+------------+
+| D101      | KA01AB1234 |
+| D102      | KA02CD5678 |
+| D103      | KA03EF9012 |
+| D104      | KA04GH3456 |
+| D105      | KA05IJ7890 |
++-----------+------------+
+5 rows in set (0.055 sec)
+
+Query OK, 6 rows affected (0.058 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
++-----------+------------+-----------+---------+
+| driver_id | regno      | report_no | dmg_amt |
++-----------+------------+-----------+---------+
+| D101      | KA01AB1234 |     43627 |    5000 |
+| D101      | KA01AB1234 |     43632 |    4000 |
+| D102      | KA02CD5678 |     43628 |    7000 |
+| D103      | KA03EF9012 |     43629 |    6000 |
+| D104      | KA04GH3456 |     43630 |    8000 |
+| D105      | KA05IJ7890 |     43631 |    9000 |
++-----------+------------+-----------+---------+
+6 rows in set (0.058 sec)
+
++------------------+
+| COUNT(driver_id) |
++------------------+
+|                3 |
++------------------+
+1 row in set (0.059 sec)
+
++-----------------------------+
+| COUNT(DISTINCT a.report_no) |
++-----------------------------+
+|                           1 |
++-----------------------------+
+1 row in set (0.059 sec)
+
+Query OK, 1 row affected (0.060 sec)
+
+Query OK, 1 row affected (0.061 sec)
+
++-----------+------------+-----------+
+| report_no | acc_date   | location  |
++-----------+------------+-----------+
+|     43633 | 2021-04-05 | Location6 |
++-----------+------------+-----------+
+1 row in set (0.062 sec)
+
++-----------+------------+-----------+---------+
+| driver_id | regno      | report_no | dmg_amt |
++-----------+------------+-----------+---------+
+| D101      | KA01AB1234 |     43633 |    5500 |
++-----------+------------+-----------+---------+
+1 row in set (0.062 sec)
+
+Query OK, 1 row affected (0.063 sec)
+
++------------+--------+------+
+| regno      | model  | year |
++------------+--------+------+
+| KA01AB1234 | Swift  | 2020 |
+| KA03EF9012 | Alto   | 2015 |
+| KA04GH3456 | Triber | 2019 |
+| KA05IJ7890 | Tiago  | 2018 |
++------------+--------+------+
+4 rows in set (0.063 sec)
+
+Query OK, 1 row affected (0.065 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
++-----------+------------+-----------+---------+
+| driver_id | regno      | report_no | dmg_amt |
++-----------+------------+-----------+---------+
+| D101      | KA01AB1234 |     43627 |   10000 |
++-----------+------------+-----------+---------+
+1 row in set (0.065 sec)
+
+Query OK, 0 rows affected (0.070 sec)
+
++--------+------+
+| model  | year |
++--------+------+
+| Swift  | 2020 |
+| Alto   | 2015 |
+| Triber | 2019 |
+| Tiago  | 2018 |
++--------+------+
+4 rows in set (0.071 sec)
+
+MariaDB [Insurance]> -- check
+MariaDB [Insurance]> INSERT INTO Accident VALUES (43634, '2021-05-10', 'Location7');
+    -> INSERT INTO Participated VALUES ('D101', 'KA01AB1234', 43634, 6000);
+    -> //
+Query OK, 1 row affected (0.004 sec)
+
+ERROR 1644 (45000): Driver cannot participate in more than 3 accidents in a given year.

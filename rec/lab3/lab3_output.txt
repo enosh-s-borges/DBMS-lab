@@ -1,16 +1,16 @@
-Query OK, 0 rows affected, 1 warning (0.001 sec)
+Query OK, 4 rows affected (0.022 sec)
 
-Query OK, 1 row affected (0.001 sec)
+Query OK, 1 row affected (0.022 sec)
 
-Query OK, 0 rows affected (0.001 sec)
+Query OK, 0 rows affected (0.022 sec)
 
-Query OK, 0 rows affected (0.011 sec)
+Query OK, 0 rows affected (0.028 sec)
 
-Query OK, 0 rows affected (0.017 sec)
+Query OK, 0 rows affected (0.035 sec)
 
-Query OK, 0 rows affected (0.023 sec)
+Query OK, 0 rows affected (0.043 sec)
 
-Query OK, 5 rows affected (0.024 sec)
+Query OK, 5 rows affected (0.043 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
 +-----+---------+--------+------+
@@ -19,59 +19,68 @@ Records: 5  Duplicates: 0  Warnings: 0
 |   1 | Albert  |      8 |   41 |
 |   2 | Bob     |      9 |   45 |
 |   3 | Charlie |      9 |   49 |
-|   4 | David   |      7 |   35 |
-|   5 | Eve     |      6 |   30 |
+|   4 | David   |      9 |   54 |
+|   5 | Eve     |      7 |   59 |
 +-----+---------+--------+------+
-5 rows in set (0.024 sec)
+5 rows in set (0.044 sec)
 
-Query OK, 5 rows affected (0.026 sec)
+Query OK, 5 rows affected (0.045 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
-+-----+--------+--------+
-| bid | bname  | color  |
-+-----+--------+--------+
-| 101 | Boat1  | Red    |
-| 102 | Boat2  | Blue   |
-| 103 | Stormy | Green  |
-| 104 | Boat4  | Yellow |
-| 105 | Boat5  | Black  |
-+-----+--------+--------+
-5 rows in set (0.026 sec)
++-----+-------+--------+
+| bid | bname | color  |
++-----+-------+--------+
+| 101 | Boat1 | Red    |
+| 102 | Boat2 | Blue   |
+| 103 | Boat3 | Green  |
+| 104 | Boat4 | Yellow |
+| 105 | Boat5 | Black  |
++-----+-------+--------+
+5 rows in set (0.045 sec)
 
-Query OK, 10 rows affected (0.029 sec)
-Records: 10  Duplicates: 0  Warnings: 0
+Query OK, 13 rows affected (0.046 sec)
+Records: 13  Duplicates: 0  Warnings: 0
 
 +------+------+------------+
 | sid  | bid  | date       |
 +------+------+------------+
 |    1 |  101 | 2024-01-01 |
-|    1 |  102 | 2024-01-02 |
-|    2 |  103 | 2024-01-03 |
-|    3 |  104 | 2024-01-04 |
-|    4 |  105 | 2024-01-05 |
-|    5 |  101 | 2024-01-06 |
-|    2 |  102 | 2024-01-07 |
-|    3 |  103 | 2024-01-08 |
-|    4 |  104 | 2024-01-09 |
-|    5 |  105 | 2024-01-10 |
+|    1 |  102 | 2024-02-01 |
+|    1 |  103 | 2024-03-01 |
+|    1 |  104 | 2024-04-01 |
+|    1 |  105 | 2024-05-01 |
+|    2 |  101 | 2024-02-01 |
+|    3 |  101 | 2024-03-01 |
+|    4 |  101 | 2024-04-01 |
+|    5 |  101 | 2024-05-01 |
+|    2 |  102 | 2024-02-01 |
+|    3 |  103 | 2024-03-01 |
+|    4 |  104 | 2024-04-01 |
+|    5 |  105 | 2024-05-01 |
 +------+------+------------+
-10 rows in set (0.029 sec)
+13 rows in set (0.047 sec)
 
-+-------+
-| color |
-+-------+
-| Red   |
-| Blue  |
-+-------+
-2 rows in set (0.029 sec)
++--------+
+| color  |
++--------+
+| Red    |
+| Blue   |
+| Green  |
+| Yellow |
+| Black  |
++--------+
+5 rows in set (0.047 sec)
 
-+-------+
-| color |
-+-------+
-| Red   |
-| Blue  |
-+-------+
-2 rows in set (0.029 sec)
++--------+
+| color  |
++--------+
+| Red    |
+| Blue   |
+| Green  |
+| Yellow |
+| Black  |
++--------+
+5 rows in set (0.047 sec)
 
 +-----+
 | sid |
@@ -79,47 +88,68 @@ Records: 10  Duplicates: 0  Warnings: 0
 |   1 |
 |   2 |
 |   3 |
+|   4 |
 +-----+
-3 rows in set (0.030 sec)
+4 rows in set (0.048 sec)
+
++---------+
+| sname   |
++---------+
+| Albert  |
+| Bob     |
+| Charlie |
+| David   |
+| Eve     |
++---------+
+5 rows in set (0.048 sec)
 
 +--------+
 | sname  |
 +--------+
 | Albert |
-| David  |
-| Eve    |
 +--------+
-3 rows in set (0.030 sec)
+1 row in set (0.049 sec)
 
-Empty set (0.031 sec)
++--------+
+| sname  |
++--------+
+| Albert |
++--------+
+1 row in set (0.049 sec)
 
-Empty set (0.031 sec)
++-------+------+
+| sname | age  |
++-------+------+
+| Eve   |   59 |
++-------+------+
+1 row in set (0.049 sec)
 
-+---------+------+
-| sname   | age  |
-+---------+------+
-| Charlie |   49 |
-+---------+------+
-1 row in set (0.031 sec)
++-------+------+
+| sname | age  |
++-------+------+
+| Eve   |   59 |
++-------+------+
+1 row in set (0.049 sec)
 
-+---------+------+
-| sname   | age  |
-+---------+------+
-| Charlie |   49 |
-+---------+------+
-1 row in set (0.031 sec)
++---------+---------+
+| Boat_id | avg_age |
++---------+---------+
+|     101 | 49.6000 |
++---------+---------+
+1 row in set (0.049 sec)
 
-Empty set (0.032 sec)
-
-Query OK, 0 rows affected (0.035 sec)
+Query OK, 0 rows affected (0.052 sec)
 
 +-------------+-----------+------------+
 | Sailor_Name | Boat_Name | Boat_Color |
 +-------------+-----------+------------+
 | Albert      | Boat1     | Red        |
 | Albert      | Boat2     | Blue       |
+| Albert      | Boat3     | Green      |
+| Albert      | Boat4     | Yellow     |
+| Albert      | Boat5     | Black      |
 +-------------+-----------+------------+
-2 rows in set (0.036 sec)
+5 rows in set (0.052 sec)
 
 MariaDB [Sailors]> -- Check trigger
 MariaDB [Sailors]> DELETE FROM Boat WHERE bid = 101;
