@@ -1,0 +1,155 @@
+Query OK, 1 row affected (0.001 sec)
+
+Query OK, 0 rows affected (0.001 sec)
+
+Query OK, 0 rows affected (0.011 sec)
+
+Query OK, 0 rows affected (0.019 sec)
+
+Query OK, 0 rows affected (0.025 sec)
+
+Query OK, 0 rows affected (0.036 sec)
+
+Query OK, 0 rows affected (0.045 sec)
+
+Query OK, 0 rows affected (0.057 sec)
+
+Query OK, 5 rows affected (0.059 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++--------+---------+-----------+
+| custID | cname   | city      |
++--------+---------+-----------+
+|      1 | Ravi    | Mysuru    |
+|      2 | Ram     | Bengaluru |
+|      3 | Kumar   | Mumbai    |
+|      4 | Kiran   | Delhi     |
+|      5 | Chethan | Bengaluru |
++--------+---------+-----------+
+5 rows in set (0.059 sec)
+
+Query OK, 5 rows affected (0.061 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++---------+------------+--------+----------+
+| orderID | odate      | custID | orderAmt |
++---------+------------+--------+----------+
+|     101 | 2020-01-14 |      1 |     2000 |
+|     102 | 2021-01-16 |      2 |      600 |
+|     103 | 2023-02-15 |      3 |     2500 |
+|     104 | 2019-09-13 |      4 |     1000 |
+|     105 | 2020-12-13 |      5 |      200 |
++---------+------------+--------+----------+
+5 rows in set (0.061 sec)
+
+Query OK, 5 rows affected (0.063 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++--------+-----------+
+| itemID | unitPrice |
++--------+-----------+
+|      1 |       400 |
+|      2 |       200 |
+|      3 |      1000 |
+|      4 |       100 |
+|      5 |       500 |
++--------+-----------+
+5 rows in set (0.063 sec)
+
+Query OK, 5 rows affected (0.065 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++-------------+-----------+
+| warehouseID | city      |
++-------------+-----------+
+|           1 | Mysuru    |
+|           2 | Bengaluru |
+|           3 | Mumbai    |
+|           4 | Delhi     |
+|           5 | Chennai   |
++-------------+-----------+
+5 rows in set (0.065 sec)
+
+Query OK, 5 rows affected (0.067 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++---------+--------+-----+
+| orderID | itemID | qty |
++---------+--------+-----+
+|     101 |      1 |   5 |
+|     102 |      2 |   4 |
+|     103 |      3 |   1 |
+|     104 |      4 |   3 |
+|     105 |      5 |   4 |
++---------+--------+-----+
+5 rows in set (0.067 sec)
+
+Query OK, 5 rows affected (0.070 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
++---------+-------------+------------+
+| orderID | warehouseID | shipDate   |
++---------+-------------+------------+
+|     101 |           1 | 2020-01-15 |
+|     102 |           2 | 2021-01-17 |
+|     103 |           3 | 2023-02-16 |
+|     104 |           4 | 2019-09-14 |
+|     105 |           5 | 2020-12-14 |
++---------+-------------+------------+
+5 rows in set (0.070 sec)
+
++---------+------------+
+| orderID | shipDate   |
++---------+------------+
+|     102 | 2021-01-17 |
++---------+------------+
+1 row in set (0.071 sec)
+
++---------+-------------+
+| orderID | warehouseID |
++---------+-------------+
+|     103 |           3 |
++---------+-------------+
+1 row in set (0.072 sec)
+
++---------+----------------+----------------+
+| cname   | NumberOfOrders | AvgOrderAmount |
++---------+----------------+----------------+
+| Chethan |              1 |       200.0000 |
+| Kiran   |              1 |      1000.0000 |
+| Kumar   |              1 |      2500.0000 |
+| Ram     |              1 |       600.0000 |
+| Ravi    |              1 |      2000.0000 |
++---------+----------------+----------------+
+5 rows in set (0.074 sec)
+
+Query OK, 1 row affected (0.076 sec)
+
++----------------+
+| MAX(unitPrice) |
++----------------+
+|           1000 |
++----------------+
+1 row in set (0.076 sec)
+
+MariaDB [OrderProcessing]> -- check trigger
+MariaDB [OrderProcessing]> INSERT INTO OrderItem VALUES (101, 002, 3);
+    -> SELECT * FROM OrderTable WHERE orderID = 101;
+    -> //
+Query OK, 1 row affected (0.015 sec)
+
++---------+------------+--------+----------+
+| orderID | odate      | custID | orderAmt |
++---------+------------+--------+----------+
+|     101 | 2020-01-14 |      1 |     2600 |
++---------+------------+--------+----------+
+1 row in set (0.015 sec)
+
+Query OK, 0 rows affected (0.007 sec)
+
++---------+------------+
+| orderID | shipDate   |
++---------+------------+
+|     102 | 2021-01-17 |
++---------+------------+
+1 row in set (0.007 sec)
